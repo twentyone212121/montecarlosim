@@ -1,36 +1,21 @@
-(WIP) CMake FetchContent example
+Monte Carlo for computing area
 ==========================
 
-This is WIP example of using CMake FetchContent in real world scenario. It
-downloads ImGui, SFML and ImGui-SFML and then a simple application uses these
-dependencies for building.
+This program can compute area of a figure which have 
+a function that returns true if point is inside this figure, 
+otherwise - false.
 
-This example is interesting, because ImGui-SFML depends on both ImGui and SFML,
-so you can also see how fetched dependencies can work with each other is well.
+Available figures are a circle, a quad, a triangle, any polynomial and any polygon
 
-Building is simple, just do:
-
-```sh
-mkdir build
-cd build
-cmake <path-to-cloned-repo>
-cmake --build .
-./src/imgui-sfml-example # or .\src\Debug\imgui-sfml-example.exe if you're on Windows
-```
-
-Options
--------
-
-You can also set the following options when building:
-
-* `USE_SYSTEM_DEPS` (`OFF` by default) - search for SFML installed on system instead of fetching it
-* `LINK_DEPS_STATIC` (`ON` by default) - link dependencies statically
-
-Depencies
+How to use
 ---
 
-CMake >= 3.12
+Choose a figure from a list in the Examples menu. 
+Then enter its parameters and change the boundaries if necessary. 
+Computed area can be seen in the Area menu. You can change number 
+of dots to increase or decrease precision.
 
-Also, if you're on Linux, you'll need to install dependencies for building SFML
-specified
-[here](https://www.sfml-dev.org/tutorials/2.5/compile-with-cmake.php#installing-dependencies).
+Dependencies
+---
+
+I am using SFML for graphics and imgui for graphical interface
